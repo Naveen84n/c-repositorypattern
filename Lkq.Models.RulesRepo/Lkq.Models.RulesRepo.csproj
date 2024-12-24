@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0</TargetFrameworks>
+    <PackageId>Lkq.RulesRepo</PackageId>
+    <authors>LKQ Developer</authors>
+    <PackageTags>RulesRepo</PackageTags>
+    <Description>Data models for RulesRepo</Description>
+    <AssemblyName>Lkq.Models.RulesRepo</AssemblyName>
+    <RootNamespace>Lkq.Models.RulesRepo</RootNamespace>        
+    <RepositoryUrl>https://gitlab.lkqdev.com/ecomm/RulesRepo</RepositoryUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageProjectUrl></PackageProjectUrl>
+    <Company>LKQ</Company>
+    <Copyright>LKQ Corp</Copyright>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>Lkq.Models.RulesRepo.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>Lkq.Models.RulesRepo.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="CompNine\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lkq.Data.RulesRepo\Lkq.Data.RulesRepo.csproj" />
+    <ProjectReference Include="..\Lkq.Domain.RulesRepo\Lkq.Domain.RulesRepo.csproj" />
+  </ItemGroup>
+
+</Project>

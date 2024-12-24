@@ -1,0 +1,6 @@
+include:
+  - project: 'DevOps/devops_BLDCICD/devops_BLD_CI_CD_pipelines'
+    ref: master
+    file: '/dotnetcore/objfnt_rulesrepoapi.yaml'
+
+##### File intentionally blank #####

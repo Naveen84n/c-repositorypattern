@@ -1,0 +1,454 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lkq.Api.RulesRepo</name>
+    </assembly>
+    <members>
+        <member name="T:Lkq.Api.RulesRepo.Controllers.RulesController">
+            <summary>
+            Rules Controller
+            </summary>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Controllers.RulesController.#ctor(Lkq.Api.RulesRepo.Model.IRulesRepoApiResponse,Microsoft.Extensions.Logging.ILogger{Lkq.Api.RulesRepo.Controllers.RulesController},Lkq.Core.RulesRepo.Interfaces.IRules)">
+            <summary>
+            Rules Controller Constructor
+            </summary>
+            <param name="apiResponse"></param>
+            <param name="logger"></param>
+            <param name="rules"></param>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Controllers.RulesController.GetPartTypes">
+            <summary>
+            Returns list of Part Types
+            </summary>
+            <remarks>Returns list of Part Types.</remarks>
+            <response code="401">Unauthorized Access</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Controllers.RulesController.GetAttributes">
+            <summary>
+            Returns list of Attributes
+            </summary>
+            <remarks>Returns list of Attributes.</remarks>
+            <response code="401">Unauthorized Access</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Controllers.RulesController.GetAttributesValue(System.String)">
+            <summary>
+            Returns list of Attribute Values for the given Attribute
+            </summary>
+            <param name="attributeName"></param>
+            <remarks>
+            Returns list of Attribute Values for the given Attribute
+            
+            Sample request:
+            
+                attributeName : "BedType"
+            </remarks>
+            <response code="401">Unauthorized Access</response>
+            <response code="500">Internal Server Error</response>
+            <response code="400">Bad Request</response>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Controllers.RulesController.GetDataSources">
+            <summary>
+            Returns list of Data sources with the response structure
+            </summary>
+            <remarks>Returns list of Data sources with the response structure.</remarks>
+            <response code="401">Unauthorized Access</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Controllers.RulesController.GetRule(System.Int32)">
+            <summary>
+            Returns rule by Rule ID
+            </summary>
+            <remarks> 
+            Returns rule by Rule ID
+            
+            Sample request:
+            
+                id : 1
+            </remarks>
+            <param name="id"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized Access</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Controllers.RulesController.GetRules(System.Int32,System.Int32)">
+            <summary>
+            Returns list of rules by Part Type and Attribute ID 
+            </summary>
+            <param name="attributeID"></param>
+            <param name="partType"></param>
+            <remarks>
+            Returns list of rules by Part Type and Attribute ID
+            
+                Attribute ID and Part Types are optional parameter, if both the parameters are null then it will return all the rules else
+                filters applied based on the input parameter 
+            Sample request:
+            
+                attributeID : 1
+                partType : 400
+            </remarks>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized Access</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Controllers.RulesController.SaveRule(Lkq.Models.RulesRepo.RuleRequestModel)">
+            <summary>
+            Creates a new Rule
+            </summary>
+            <remarks>
+            Creates a new Rule and returns the newly created data
+            
+            Sample request:
+            
+                {
+                 "rulesDescription": "BedType filter",
+                 "partType": "101",
+                 "attributesID": 9,
+                 "attributeName": "BedType",
+                 "attributeLookup": "11",
+                 "dataSourceID": 1,
+                 "propertyPath": "RequestedData.CompNineData.BuildDate",
+                 "propertyValue": "1",
+                 "ordinal": 1,
+                 "user": "Admin"
+                }
+            </remarks>
+            <param name="body"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized Access</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Controllers.RulesController.GetCount(System.Collections.Generic.List{System.String})">
+            <summary>
+            Returns no. of rules by list of partTypes
+            </summary>
+            <remarks> 
+            Returns no. of rules by list of partTypes, "All" is to return total count of rules
+            
+            Sample request:
+            
+                partTypes : ["300","400"]
+                
+            </remarks>
+            <param name="partType"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized Access</response>
+            <response code="500">Internal Server Error</response>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Controllers.RulesController.UpdateRule(System.Int32,Lkq.Models.RulesRepo.RuleRequestModel)">
+            <summary>
+            Updates an existing rule
+            </summary>
+            <param name="id"></param>
+            <param name="body"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized Access</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Updates an existing Rule
+            
+            Sample request:
+                
+                id : 250
+            
+                {
+                 "rulesDescription": "BedType filter",
+                 "partType": "101",
+                 "attributesID": 9,
+                 "attributeName": "BedType",
+                 "attributeLookup": "11",
+                 "dataSourceID": 1,
+                 "propertyPath": "RequestedData.CompNineData.BuildDate",
+                 "propertyValue": "1",
+                 "ordinal": 1,
+                 "user": "Admin"
+                }
+            </remarks>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Controllers.RulesController.DeleteRule(System.Int32)">
+            <summary>
+            Deletes an existing rule
+            </summary>
+            <param name="id"></param>
+            <response code="400">Bad Request</response>
+            <response code="401">Unauthorized Access</response>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Deletes an existing RUle 
+            
+            Sample Request:
+                
+                id : 250
+            </remarks>
+        </member>
+        <member name="T:Lkq.Api.RulesRepo.Extension.CheckConstraintExtensions">
+            <summary>
+            CheckConstraintExtensions
+            </summary>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Extension.CheckConstraintExtensions.CheckLessThanOrEqual(System.Int32,System.Int32,System.String)">
+            <summary>
+            Check the given int less than or Equal to given value
+            </summary>
+            <param name="obj"></param>
+            <param name="givenInt"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Extension.CheckConstraintExtensions.CheckGreaterThan(System.Int32,System.Int32,System.String)">
+            <summary>
+            Check the given int greater than given value
+            </summary>
+            <param name="obj"></param>
+            <param name="givenInt"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Extension.CheckConstraintExtensions.CheckNullOrEmpty(System.String,System.String)">
+            <summary>
+            Check the given String is Null or Empty
+            </summary>
+            <param name="obj"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Extension.CheckConstraintExtensions.CheckLengthNotEquals(System.String,System.Int32,System.String)">
+            <summary>
+            Check the Length of the string equals to given value
+            </summary>
+            <param name="obj"></param>
+            <param name="value"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Extension.CheckConstraintExtensions.IsValidEnum``1(``0,System.String)">
+            <summary>
+            Check for valid enum value
+            </summary>
+            <param name="value"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Extension.CheckConstraintExtensions.IsValidLobEnum``1(``0,``0,System.String)">
+            <summary>
+            Check for valid enum value
+            </summary>
+            <param name="value"></param>
+            <param name="invalidValue"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Extension.CheckConstraintExtensions.CheckObjNull(System.Object,System.String)">
+            <summary>
+            Check the given object is Null
+            </summary>
+            <param name="obj"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Extension.CheckConstraintExtensions.CheckValueInRange(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Check the given value in between the range
+            </summary>
+            <param name="obj"></param>
+            <param name="from"></param>
+            <param name="to"></param>
+            <param name="msg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Extension.CheckConstraintExtensions.CheckValueLessThanOrEqual(System.Collections.Generic.List{System.String},System.Int32,System.String)">
+             <summary>
+             Check the given int list less than or Equal to given value
+             </summary>
+            <param name="obj"></param>
+             <param name="givenInt"></param>
+             <param name="msg"></param>
+             <returns></returns>
+        </member>
+        <member name="T:Lkq.Api.RulesRepo.Extension.ServiceCollectionExtensions">
+            <summary>
+            ServiceCollectionExtensions
+            </summary>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Extension.ServiceCollectionExtensions.AddServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Dependency Injection
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:Lkq.Api.RulesRepo.Filters.ApiExceptionFilter">
+            <summary>
+            Custom Exception Filter
+            </summary>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Filters.ApiExceptionFilter.#ctor(Microsoft.Extensions.Logging.ILogger{Lkq.Api.RulesRepo.Filters.ApiExceptionFilter})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Filters.ApiExceptionFilter.OnExceptionAsync(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            On Exception Implementation
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Lkq.Api.RulesRepo.Filters.Exceptions">
+            <summary>
+            Exceptions Enum
+            </summary>
+        </member>
+        <member name="T:Lkq.Api.RulesRepo.Model.IRulesRepoApiResponse">
+            <summary>
+            VPSI API Response Interface
+            </summary>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Model.IRulesRepoApiResponse.CreateAPISuccessResponse(System.Object)">
+            <summary>
+            Success Response
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Model.IRulesRepoApiResponse.CreateAPIFailureResponse(System.String,System.Int32)">
+            <summary>
+            Failure Response
+            </summary>
+            <param name="message"></param>
+            <param name="statusCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Model.IRulesRepoApiResponse.CreatedResponse(System.Object)">
+            <summary>
+            Created Response
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Lkq.Api.RulesRepo.Model.RulesRepoApiResponse">
+            <summary>
+            VPSIApiResponse Model
+            </summary>
+        </member>
+        <member name="P:Lkq.Api.RulesRepo.Model.RulesRepoApiResponse.StatusCode">
+            <summary>
+            API Response Code
+            </summary>
+            <example>404</example>
+        </member>
+        <member name="P:Lkq.Api.RulesRepo.Model.RulesRepoApiResponse.Message">
+            <summary>
+            API Response Message
+            </summary>
+            <example>Not Found</example>
+        </member>
+        <member name="P:Lkq.Api.RulesRepo.Model.RulesRepoApiResponse.Result">
+            <summary>
+            API Response Result
+            </summary>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Model.RulesRepoApiResponse.CreateAPISuccessResponse(System.Object)">
+            <summary>
+            CreateAPISuccessResponse
+            </summary>
+            <param name="result"></param>
+            <returns>Return Success Response</returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Model.RulesRepoApiResponse.CreateAPIFailureResponse(System.String,System.Int32)">
+            <summary>
+            CreateAPIFailureResponse
+            </summary>
+            <returns>Return Response</returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Model.RulesRepoApiResponse.CreatedResponse(System.Object)">
+            <summary>
+            Created Response
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Lkq.Api.RulesRepo.Program">
+            <summary>
+            Main program routine
+            </summary>
+        </member>
+        <member name="P:Lkq.Api.RulesRepo.Program.Configuration">
+            <summary>
+            Configuration read from file, and injecting changes based on environment, default to PROD
+            </summary>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Program.Main(System.String[])">
+            <summary>
+            Main Entry Point
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            Create a host and build in a serilogger
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Lkq.Api.RulesRepo.Startup">
+            <summary>
+            Main startup class
+            </summary>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            CTOR
+            </summary>
+            <param name="configuration"></param>
+            <param name="appEnv"></param>
+        </member>
+        <member name="P:Lkq.Api.RulesRepo.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="P:Lkq.Api.RulesRepo.Startup.CurrentEnvironment">
+            <summary>
+            Environment
+            </summary>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:Lkq.Api.RulesRepo.Validators.PartTypeListValidator">
+            <summary>
+            Part Type List Validation
+            </summary>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Validators.PartTypeListValidator.#ctor">
+            <summary>
+            Part Type List constructor
+            </summary>
+        </member>
+        <member name="T:Lkq.Api.RulesRepo.Validators.RequestRuleModelValidator">
+            <summary>
+            Request Rule Model Validation
+            </summary>
+        </member>
+        <member name="M:Lkq.Api.RulesRepo.Validators.RequestRuleModelValidator.#ctor">
+            <summary>
+            Request Rule Validation constructor
+            </summary>
+        </member>
+    </members>
+</doc>

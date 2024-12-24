@@ -1,0 +1,300 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Lkq.Models.RulesRepo</name>
+    </assembly>
+    <members>
+        <member name="T:Lkq.Models.RulesRepo.AttributesModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.AttributesModel.AttributeID">
+            <summary>
+            Attributes ID
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.AttributesModel.TableName">
+            <summary>
+            Table Name
+            </summary>
+            <example>BedType</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.AttributesModel.KeyName">
+            <summary>
+            Key Name
+            </summary>
+            <example>BedTypeID</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.AttributesModel.ValueName">
+            <summary>
+            Value Name
+            </summary>
+            <example>BedTypeName</example>
+        </member>
+        <member name="T:Lkq.Models.RulesRepo.AttributeValuesModel">
+            <summary>
+            Attribute Values
+            </summary>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.AttributeValuesModel.AttributeValueID">
+            <summary>
+            Attribute Values Key
+            </summary>
+            <example>10</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.AttributeValuesModel.AttributeValue">
+            <summary>
+            Attribute Values Value
+            </summary>
+            <example>4 X 4</example>
+        </member>
+        <member name="T:Lkq.Models.RulesRepo.CompNine.CompNineRequestedData">
+            <summary>
+            CompNine Requested Data
+            </summary>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.CompNine.CompNineRequestedData.RequestedData">
+            <summary>
+            Requested data
+            </summary>
+        </member>
+        <member name="T:Lkq.Models.RulesRepo.DataSourceModel">
+            <summary>
+            Data Source Model
+            </summary>
+        </member>
+        <member name="M:Lkq.Models.RulesRepo.DataSourceModel.#ctor(System.Int32,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.DataSourceModel.DataSourceID">
+            <summary>
+            Data Source ID
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.DataSourceModel.DataSource">
+            <summary>
+            Data Source
+            </summary>
+            <example>CompNine</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.DataSourceModel.Structure">
+            <summary>
+            Data Source Structure
+            </summary>
+        </member>
+        <member name="T:Lkq.Models.RulesRepo.DataSourceStructure">
+            <summary>
+            Data Source Structure
+            </summary>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.DataSourceStructure.Name">
+            <summary>
+            Property name
+            </summary>
+            <example>decoder_messages</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.DataSourceStructure.Children">
+            <summary>
+            Property Child objects
+            </summary>
+        </member>
+        <member name="M:Lkq.Models.RulesRepo.DataSourceStructure.#ctor(System.String,System.Collections.Generic.IList{Lkq.Models.RulesRepo.DataSourceStructure})">
+            <summary>
+            DataSource Structure Constructor 
+            </summary>
+            <param name="name"></param>
+            <param name="children"></param>
+        </member>
+        <member name="T:Lkq.Models.RulesRepo.PartRulesModel">
+            <summary>
+            Parts Rules Model
+            </summary>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.RulesID">
+            <summary>
+            Rule ID
+            </summary>
+            <example>19</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.RulesDescription">
+            <summary>
+            Rule Description
+            </summary>
+            <example>Rule to filter Body Type</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.PartType">
+            <summary>
+            Part Type
+            </summary>
+            <example>400</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.AttributesID">
+            <summary>
+            Attribute ID
+            </summary>
+            <example>10</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.AttributeName">
+            <summary>
+            AttributeName
+            </summary>
+            <example>BodyType</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.AttributeLookup">
+            <summary>
+            Attribute Lookup
+            </summary>
+            <example>10</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.DataSourceID">
+            <summary>
+            Data Source ID
+            </summary>
+            <example>2</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.DataSourceName">
+            <summary>
+            Data Source Name
+            </summary>
+            <example>DataOne</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.PropertyPath">
+            <summary>
+            Property path
+            </summary>
+            <example>query_responses.common_data.basic_data.body_type</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.PropertyValue">
+            <summary>
+            Property Value
+            </summary>
+            <example>Convertible</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.Ordinal">
+            <summary>
+            Ordinal
+            </summary>
+            <example>13</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.CreatedDate">
+            <summary>
+            Created date
+            </summary>
+            <example>2021-11-10T23:27:46.02</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.CreatedUser">
+            <summary>
+            Created User
+            </summary>
+            <example>Admin</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.ModifiedDate">
+            <summary>
+            Modified date
+            </summary>
+            <example>2021-11-10T23:27:46.02</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.ModifiedUser">
+            <summary>
+            Modified User
+            </summary>
+            <example>Admin</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartRulesModel.IsActive">
+            <summary>
+            Status
+            </summary>
+            <example>true</example>
+        </member>
+        <member name="T:Lkq.Models.RulesRepo.PartTypesModel">
+            <summary>
+            Part Codes
+            </summary>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartTypesModel.PartTypeID">
+            <summary>
+            Part Code ID
+            </summary>
+            <example>1</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartTypesModel.PartType">
+            <summary>
+            Hollander Part No
+            </summary>
+            <example>300</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartTypesModel.PartTypeCode">
+            <summary>
+            Part Code
+            </summary>
+            <example>ENG</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.PartTypesModel.PartTypeDescription">
+            <summary>
+            Part Code Description
+            </summary>
+            <example>Engine Assembly</example>
+        </member>
+        <member name="T:Lkq.Models.RulesRepo.RuleRequestModel">
+            <summary>
+            Rule request
+            </summary>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.RuleRequestModel.RulesDescription">
+            <summary>
+            Rules Description
+            </summary>
+            <example>Rule to filter Body Type</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.RuleRequestModel.PartType">
+            <summary>
+            Part Type
+            </summary>
+            <example>300</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.RuleRequestModel.AttributesID">
+            <summary>
+            Attribute ID
+            </summary>
+            <example>10</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.RuleRequestModel.AttributeLookup">
+            <summary>
+            Attribute Lookup
+            </summary>
+            <example>22</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.RuleRequestModel.DataSourceID">
+            <summary>
+            Data Source ID
+            </summary>
+            <example>2</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.RuleRequestModel.PropertyPath">
+            <summary>
+            Property Path
+            </summary>
+            <example>query_responses.common_data.basic_data.body_type</example>
+        </member>
+        <member name="P:Lkq.Models.RulesRepo.RuleRequestModel.PropertyValue">
+            <summary>
+            Property Value
+            </summary>
+            <example>Convertible</example>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Lkq.Models.RulesRepo.RuleRequestModel.Ordinal" -->
+        <member name="P:Lkq.Models.RulesRepo.RuleRequestModel.User">
+            <summary>
+            User Name
+            </summary>
+            <example>Admin</example>
+        </member>
+    </members>
+</doc>
